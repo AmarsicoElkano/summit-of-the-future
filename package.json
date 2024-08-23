@@ -8,7 +8,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "slicemachine": "start-slicemachine"
+    "slicemachine": "start-slicemachine",
+    "start": "node .output/server/index.mjs"
   },
   "dependencies": {
     "gsap-trial": "^3.12.5",
