@@ -5,10 +5,7 @@ export default defineNuxtConfig({
  ssr: false,
 
  app: {
-					baseURL:
-									process.env.NODE_ENV === "production"
-													? "/WIP/summit-of-the-future/"
-													: undefined,
+					baseURL:"/",
 	},
 
  devtools: { enabled: false },
