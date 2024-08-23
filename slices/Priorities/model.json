@@ -1,0 +1,42 @@
+{
+  "id": "priorities",
+  "type": "SharedSlice",
+  "name": "Priorities",
+  "description": "Priorities",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "paragraph": {
+          "type": "Text",
+          "config": {
+            "label": "Paragraph",
+            "placeholder": ""
+          }
+        },
+        "priorities": {
+          "type": "Group",
+          "config": {
+            "label": "Priorities",
+            "repeat": true,
+            "fields": {
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "Title",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

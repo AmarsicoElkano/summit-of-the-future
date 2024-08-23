@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .burger-first {
+    transform: rotate(45deg) translate(1px,-2px);
+  }
+
+  .burger-last {
+    transform: rotate(-45deg) translate(0px,2px) scale(1);
+  }
+
+  .masonry {
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+    grid-auto-rows: 20px;
+  }
+}
+
+@font-face {
+  font-family: 'robotoregular';
+  src: url('/font/robotocondensed-regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'robotobold';
+  src: url('/font/robotocondensed-bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --primary-color: #004987;
+  --secondary-color: #ecf5f9;
+  --third-color: #fcfbf9;
+  --blue-color: #009edb;
+  --yellow-color: #fbb04d;
+  --burger-color: #004987;
+  --logo-color: #231F20;
+  --white: #ffffff;
+  --font-body: 'robotoregular';
+  --font-display: 'robotobold';
+  --grid-cols: 12;
+  --size-base: 10;
+  --size-canvas: 1440;
+}
+
+.logo {
+	color: var(--logo-color);
+}
+
+html {
+  @apply overflow-x-hidden;
+  font-size: calc(var(--size-base)*100vw/var(--size-canvas));
+}
+
+body {
+  @apply antialiased font-body text-base overflow-x-hidden;
+  font-kerning: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-display;
+}
+
+b, strong {
+  @apply font-bold;
+}
+
+.grid-layout {
+  @apply w-full h-full grid grid-cols-12;
+}
+
+.grid-layout-imgs {
+  @apply w-full h-full grid grid-cols-12;
+}
+
+
+.toggle-nav.active {
+  --burger-color: #ffffff;
+
+  div:nth-child(1) {
+    @apply burger-first;
+  }
+  div:nth-child(2) {
+    @apply scale-x-0;
+  }
+  div:nth-child(3) {
+    @apply burger-last;
+  }  
+}
+
+.noise {
+  @apply absolute inset-0 h-full bg-repeat;
+  background-size: 10%;
+  background: url(/public/img/noise.png) transparent;
+}
+
+.lu {
+  left: unset;
+}
+
+/*
+  Lenis stuff
+*/
+
+html.lenis, html.lenis body {
+  @apply h-auto;
+}
+
+.lenis.lenis-smooth {
+  @apply scroll-auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  @apply overscroll-contain;
+}
+
+.lenis.lenis-stopped {
+  @apply overflow-hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  @apply pointer-events-none;
+}
+
+/* Swiper */
+.swiper-button-next:after, .swiper-button-prev:after {
+  content: '' !important;
+}

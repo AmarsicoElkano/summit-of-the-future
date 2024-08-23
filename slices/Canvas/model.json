@@ -1,0 +1,65 @@
+{
+  "id": "canvas",
+  "type": "SharedSlice",
+  "name": "Canvas",
+  "description": "Canvas",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title_one": {
+          "type": "Text",
+          "config": {
+            "label": "Title Line 1",
+            "placeholder": ""
+          }
+        },
+        "title_second": {
+          "type": "Text",
+          "config": {
+            "label": "Title Line 2",
+            "placeholder": ""
+          }
+        },
+        "title_third": {
+          "type": "Text",
+          "config": {
+            "label": "Title Line 3",
+            "placeholder": ""
+          }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Paragraph text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "image_left": {
+          "type": "Image",
+          "config": {
+            "label": "Image Left",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "image_right": {
+          "type": "Image",
+          "config": {
+            "label": "Image Right",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

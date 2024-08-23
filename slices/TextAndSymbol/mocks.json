@@ -1,0 +1,35 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sit ea non et ad aliquip reprehenderit."
+						}
+					}
+				]
+			},
+			"title_line_one": {
+				"__TYPE__": "FieldContent",
+				"value": "necessary",
+				"type": "Text"
+			},
+			"title_line_two": {
+				"__TYPE__": "FieldContent",
+				"value": "stomach",
+				"type": "Text"
+			},
+			"title_line_three": {
+				"__TYPE__": "FieldContent",
+				"value": "place",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]
