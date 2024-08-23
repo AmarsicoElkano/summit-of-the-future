@@ -29,5 +29,8 @@
     "slice-machine-ui": "^2.1.0",
     "tailwindcss": "^3.4.3",
     "tailwindcss-3d": "^1.0.6"
+  },
+  "engines": {
+    "node": "20.x"
   }
 }
