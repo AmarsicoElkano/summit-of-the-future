@@ -5,7 +5,7 @@ export default defineNuxtConfig({
  ssr: false,
 
  app: {
-					baseURL:"/",
+					baseURL:"/summit-of-the-future",
 	},
 
  devtools: { enabled: false },

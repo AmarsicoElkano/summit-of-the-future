@@ -65,8 +65,8 @@ const appConfig = defuFn(inlineAppConfig);
 
 const _inlineRuntimeConfig = {
   "app": {
-    "baseURL": "/WIP/summit-of-the-future/",
-    "buildId": "532fe883-69fb-461e-8659-a6a429af98a3",
+    "baseURL": "/summit-of-the-future",
+    "buildId": "9ababa1c-9c17-46fd-a4a2-bb5d5220241f",
     "buildAssetsDir": "/_nuxt/",
     "cdnURL": ""
   },
