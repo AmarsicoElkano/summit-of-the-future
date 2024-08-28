@@ -736,6 +736,7 @@
 					<div
 							class="w-[76px] md:w-[200px] h-[54px] md:h-[143px] rounded-lg absolute bg-center bg-cover bg-no-repeat"
 							v-for="(item, index) in doc.data.gallery"
+							:key="index"
 							ref="images"
 							:style="{
 								backgroundImage: `url(${item.image.url})`,

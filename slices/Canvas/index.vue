@@ -125,14 +125,14 @@
 					/>
 			</div>
 
-			<div class="mb-[40px] md:mb-[140px] relative z-20">
+			<div class="mb-[40px] md:mb-[140px] relative z-20 max-w-[1000px] lg:max-w-[100%]">
 				<h2 data-title class="text-canvas_mb md:text-canvas uppercase text-white">
 					{{ slice.primary.title_one }}
 				</h2>
-				<h2 data-title class="text-canvas_mb md:text-canvas pl-[50px] md:pl-[230px] uppercase text-white">
+				<h2 data-title class="text-canvas_mb md:text-canvas pl-[50px] md:pl-[180px] uppercase text-white">
 					{{ slice.primary.title_second }}
 				</h2>
-				<h2 data-title class="text-canvas_mb md:text-canvas pl-[30px] md:pl-[128px] uppercase text-white">
+				<h2 data-title class="text-canvas_mb md:text-canvas pl-[30px] md:pl-[100px] uppercase text-white">
 					{{ slice.primary.title_third }}
 				</h2>
 			</div>

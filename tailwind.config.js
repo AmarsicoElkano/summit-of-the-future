@@ -88,7 +88,7 @@ export default {
       ],
 
       canvas: [
-        '100px',
+        '90px',
         {
           lineHeight: 1,
         },
