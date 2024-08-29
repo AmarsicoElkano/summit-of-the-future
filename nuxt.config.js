@@ -5,8 +5,8 @@ export default defineNuxtConfig({
 	ssr: false,
 
 	app: {
-		// baseURL:"/pact",
-		baseURL:"/",
+		baseURL:"/pact",
+		//baseURL:"/",
 	},
 
 	devtools: { enabled: false },
