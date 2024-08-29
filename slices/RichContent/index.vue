@@ -137,13 +137,13 @@
 
 			<div class="relative">
 				<img
-					class="w-full"
+					class="w-[58%] sm:w-[50%] mds:w-[inherit] ml-auto mr-auto relative"
 					:src="bgSymbolDirection.src"
 					data-image
 				/>
 				<PrismicImage
 					:field="slice.primary.image"
-					class="absolute bottom-0 left-[-3%] sm:left-[25%] smd:left-[25%] mds:left-1/2 transform md:-translate-x-1/2 w-[58%] sm:w-[50%] mds:w-[inherit]"
+					class="absolute bottom-0 left-[-3%] sm:left-[25%] smd:left-[25%] mds:left-1/2 transform md:-translate-x-1/2 max-w-[58%] sm:max-w-[50%] mds:w-[500px] md:max-h-[400px]"
 					data-image
 				/>
 			</div>

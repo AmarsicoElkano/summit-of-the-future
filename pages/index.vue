@@ -7,6 +7,10 @@
 	const { data: doc } = await useAsyncData("doc", () =>
 		client.getSingle("home")
 	);
+
+	const { data: metadata } = await useAsyncData("metadata", () =>
+		client.getSingle("metadata")
+	);
 </script>
 
 <script>
@@ -542,28 +546,29 @@
 	<div>
 		<Html>
 			<Head>
-				<Title>{{ doc?.data?.meta_title }}</Title>
-				<Meta name="description" :content="doc?.data?.meta_description" />
-				<Meta property="og:title" :content="doc?.data?.meta_title" />
+				<Title>{{ metadata?.data?.title }}</Title>
+				<Meta name="description" :content="`${$prismic.asText(metadata?.data?.description)}`" />
+				<Meta property="og:title" :content="metadata?.data?.title" />
 				<Meta
 					property="og:description"
-					:content="doc?.data?.meta_description"
+					:content="`${$prismic.asText(metadata?.data?.description)}`"
 				/>
 				<Meta
 					property="og:image"
-					:content="`${doc?.data?.meta_image.url}&w=1920`"
+					:content="`${metadata?.data?.image.url}&w=1920`"
 				/>
 				<Meta property="og:type" content="website" />
 				<Meta property="twitter:card" content="summary_large_image" />
-				<Meta property="twitter:title" :content="doc?.data?.meta_title" />
+				<Meta property="twitter:title" :content="metadata?.data?.title" />
 				<Meta
 					property="twitter:description"
-					:content="doc?.data?.meta_description"
+					:content="`${$prismic.asText(metadata?.data?.description)}`"
 				/>
 				<Meta
 					property="twitter:image"
-					:content="`${doc?.data?.meta_image.url}&w=1920`"
+					:content="`${metadata?.data?.image.url}&w=1920`"
 				/>
+				<Link rel="icon" type="img/png" :href="`${metadata?.data?.favicon.url}&w=64`" />
 			</Head>
 		</Html>
 		<article class="relative">

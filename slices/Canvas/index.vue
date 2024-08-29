@@ -149,7 +149,7 @@
 
 			<div class="hidden md:block">
 				<PrismicImage
-					class="max-w-[366px] h-[25rem] z-10 ml-80 absolute rounded-xl top-[-5%] right-0"
+					class="max-w-[420px] h-[25rem] z-10 ml-80 absolute rounded-xl top-[-5%] right-0 object-cover"
 					:field="slice.primary.image_right"
 					data-image
 				/>
