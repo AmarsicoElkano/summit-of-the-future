@@ -568,7 +568,7 @@
 					property="twitter:image"
 					:content="`${metadata?.data?.image.url}&w=1920`"
 				/>
-				<Link rel="icon" type="img/png" :href="`${metadata?.data?.favicon.url}&w=64`" />
+				<Link rel="icon" type="image/png" :href="`${metadata?.data?.favicon.url}&w=64`" />
 			</Head>
 		</Html>
 		<article class="relative">
