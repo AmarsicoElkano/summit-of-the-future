@@ -88,7 +88,7 @@ export default {
       ],
 
       canvas: [
-        '100px',
+        '90px',
         {
           lineHeight: 1,
         },
@@ -218,7 +218,9 @@ export default {
     },
     screens: {
       sm: '768px',
+      smd: '968px',
       md: '1024px',
+      mds: '1025px',
       lg: '1440px',
       xl: '1680px',
     },

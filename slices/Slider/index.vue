@@ -47,7 +47,7 @@
 
 <template>
 
-	<section class="py-[50px] md:py-[150px] px-[60x] md:px-[160px]">
+	<section class="py-[50px] md:py-[150px] px-[60x] sm:px-[20px] mds:px-[160px]">
 		<Swiper
 			:slidesPerView="1"
 			:breakpoints="{

@@ -148,6 +148,17 @@ interface FooterDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   twitter: prismic.LinkField;
+
+  /**
+   * Instagram field in *Footer*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.instagram
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  instagram: prismic.LinkField;
 }
 
 /**
@@ -542,6 +553,71 @@ export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 /**
+ * Content for Metadata documents
+ */
+interface MetadataDocumentData {
+  /**
+   * Favicon field in *Metadata*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: metadata.favicon
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  favicon: prismic.ImageField<never>;
+
+  /**
+   * Title field in *Metadata*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: metadata.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *Metadata*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: metadata.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Image field in *Metadata*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: metadata.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Metadata document from Prismic
+ *
+ * - **API ID**: `metadata`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type MetadataDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<MetadataDocumentData>,
+    "metadata",
+    Lang
+  >;
+
+/**
  * Item in *Navigation → Links*
  */
 export interface NavigationDocumentDataLinksItem {
@@ -602,6 +678,7 @@ export type AllDocumentTypes =
   | ChapterDocument
   | FooterDocument
   | HomeDocument
+  | MetadataDocument
   | NavigationDocument;
 
 /**
@@ -1349,6 +1426,8 @@ declare module "@prismicio/client" {
       HomeDocumentDataChaptersItem,
       HomeDocumentDataStatisticsItem,
       HomeDocumentDataSlicesSlice,
+      MetadataDocument,
+      MetadataDocumentData,
       NavigationDocument,
       NavigationDocumentData,
       NavigationDocumentDataLinksItem,
