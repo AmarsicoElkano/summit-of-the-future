@@ -68,7 +68,7 @@
 </script>
 
 <template>
-	<section class="w-full bg-secondary relative py-100">
+	<section class="w-full bg-secondary relative py-100 overflow-hidden md:overflow-visible">
 		<div class="grid-layout items-center relative">
 			<div class="col-start-2 col-span-10 md:col-start-2 md:col-span-8">
 				<p class="text-primary text-[28px] leading-none md:text-md md:w-[900px]">
@@ -77,14 +77,15 @@
 			</div>
 		</div>
 		<div class="grid-layout mt-100 relative">
-			<figure class="absolute inset-0 w-full h-full z-0">
-				<img src="/img/triangle.svg" class="absolute m-auto inset-0 w-2/3" />
+			<figure class="absolute inset-0 w-full h-full z-0 translate-y-[20%] md:translate-y-[inherit] scale-[2.7] sm:scale-[1.4] md:scale-100 rotate-[-45deg] md:rotate-0">
+				<img src="/img/triangle.svg" class="absolute m-auto inset-0 w-full md:w-2/3" />
 			</figure>
 			<div class="col-start-2 col-span-10">
 				<div class="md:masonry grid gap-[20px] relative" ref="masonry">
 					<div
 						class="bg-white p-[24px] md:p-0"
 						v-for="(item, index) in slice.primary.priorities"
+						:key="index"
 						ref="items"
 					>
 						<div class="content text-primary text-download uppercase">

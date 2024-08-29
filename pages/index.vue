@@ -170,17 +170,20 @@
 				return s
 			},
 			gallery() {
-				gsap.to(this.$refs.circleGradient, 20, {
+				window.innerWidth > 1024 && (
+					gsap.to(this.$refs.circleGradient, 20, {
 					rotation: "360",
 					ease: "none",
 					repeat: -1,
-				});
+				}),
 
-				gsap.to(this.$refs.circleDashed, 80, {
-					rotation: "-360",
-					ease: "none",
-					repeat: -1,
-				});
+					gsap.to(this.$refs.circleDashed, 80, {
+						rotation: "-360",
+						ease: "none",
+						repeat: -1,
+					})
+				)
+
 
 				const images = this.$refs.images;
 				const duration = 0.5;
@@ -467,6 +470,74 @@
 	};
 </script>
 
+<style scoped>
+.set-image:last-child {
+	display: none;
+}
+
+@media screen and (max-width: 768px) {
+	.set-image-1 {
+		top: 46% !important;
+		left: 20% !important;
+		transform: scale(1) !important;
+	}
+	.set-image-2 {
+		width: 58px !important;
+		height: 47px !important;
+		top: 35% !important;
+		left: 28% !important;
+		transform: scale(1) !important;
+		border-radius: 5px;
+	}
+
+	.set-image-3 {
+		width: 89px !important;
+		height: 63px !important;
+		top: 53% !important;
+		left: 50% !important;
+		transform: scale(1) !important;
+		z-index: 2;
+		border-radius: 8px;
+	}
+
+	.set-image-4 {
+		width: 45px !important;
+		height: 32px !important;
+		top: 50% !important;
+		left: 45% !important;
+		transform: scale(1) !important;
+		border-radius: 5px;
+		z-index: 1;
+	}
+
+	.set-image-5 {
+		width: 88px !important;
+		height: 62px !important;
+		top: 37% !important;
+		left: 58% !important;
+		transform: scale(1) !important;
+	}
+}
+
+@media screen and (max-width: 1025px) {
+	.arrows-info-1 {
+		margin-top: 0 !important;
+	}
+
+	.arrows-info-2 {
+		margin-top: -4vw !important;
+	}
+
+	.arrows-info-3 {
+		margin-top: 0 !important;
+	}
+
+	.arrows-info-4 {
+		margin-top: -6vw !important;
+	}
+}
+</style>
+
 <template>
 	<div>
 		<Html>
@@ -715,35 +786,36 @@
 			</section>
 
 			<!-- gallery -->
-			<section :ref="setRef" class="bg-primary min-h-screen relative">
+			<section :ref="setRef" class="bg-primary min-h-[80dvh] sm:min-h-screen relative">
 				<div ref="nextSection" lass="animate-[noise_.2s_infinite] noise z-0 opacity-50"></div>
 
-				<figure class="absolute top-0 right-0 w-screen h-screen">
+				<figure class="absolute top-0 right-0 w-screen h-[75dvh] sm:h-screen scale-[1.4] sm:scale-100">
 					<img
-							src="/img/circle-gradient.svg"
-							class="w-[80vw] h-[80vh] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-							ref="circleGradient"
-						/>
+						src="/img/circle-gradient.svg"
+						class="w-[80vw] h-[80vh] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+						ref="circleGradient"
+					/>
 				</figure>
 				<figure
-						class="absolute inset-0 flex items-center justify-center w-full h-full opacity-30 z-0"
+						class="absolute inset-0 flex items-center justify-center w-full h-[75dvh] sm:h-full opacity-30 z-0 scale-[1.4] sm:scale-100"
 						ref="circleDashed"
 					>
-						<img src="/img/circle-dashed.svg" class="w-[90vw] h-[90vh]" />
-					</figure>
+					<img src="/img/circle-dashed.svg" class="w-[90vw] h-[90vh]" />
+				</figure>
 
-				<div class="absolute w-screen h-screen md:h-[80%]">
+				<div class="absolute w-screen h-[75dvh] sm:h-[80%]">
 					<div
-							class="w-[76px] md:w-[200px] h-[54px] md:h-[143px] rounded-lg absolute bg-center bg-cover bg-no-repeat"
-							v-for="(item, index) in doc.data.gallery"
-							:key="index"
-							ref="images"
-							:style="{
-								backgroundImage: `url(${item.image.url})`,
-								top: galleryTopItemPosition(index),
-								left: galleryLeftItemPosition(index),
-							}"
-						></div>
+						class="w-[76px] md:w-[200px] h-[54px] md:h-[143px] rounded-[11px] md:rounded-lg absolute bg-center bg-cover bg-no-repeat"
+						:class="`set-image set-image-${index + 1}`"
+						v-for="(item, index) in doc.data.gallery"
+						:key="index"
+						ref="images"
+						:style="{
+							backgroundImage: `url(${item.image.url})`,
+							top: galleryTopItemPosition(index),
+							left: galleryLeftItemPosition(index),
+						}"
+					></div>
 				</div>
 
 				<div class="absolute max-w-[1500px] w-full left-1/2 transform -translate-x-1/2 bottom-0 flex flex-col px-[16px] md:px-[60px]">
@@ -755,7 +827,7 @@
 					</h2>
 				</div>
 			</section>
-			<section :ref="setRef" class="relative bg-primary py-[54px] md:py-[70px] px-[16px] md:px-[60px]">
+			<section :ref="setRef" class="relative bg-primary pt-[54px] md:pt-[70px] pb-[100px] md:pb-[70px] px-[16px] md:px-[60px]">
 				<p class="text-white md:w-[56%] text-medium_mb md:text-medium" data-reveal>
 					{{ doc.data.gallery_paragraph }}
 				</p>
@@ -906,7 +978,7 @@
 				:ref="setRef"
 			>
 				<div class="relative h-full w-full">
-					<nav class="absolute bottom-0 left-0 bg-white w-full h-90 z-10">
+					<nav class="absolute bottom-0 left-0 bg-white w-full h-auto mds:h-90 z-10">
 						<ul class="flex flex-row justify-between h-full overflow-hidden">
 							<li
 								class="w-full h-full text-xsm flex items-center"
@@ -974,7 +1046,7 @@
 			<!-- statistics -->
 			<section :ref="setRef" class="bg-[var(--secondary-color)] text-primary py-[100px]">
 
-				<div v-for="(item, index) in doc.data.statistics" :key="index" class="hidden md:flex items-center gap-[30px]" :style="{ marginTop: index === 1 ? '-100px' : index === 2 ? '-40px' : index === 3 ? '-120px' : '0' }" >
+				<div v-for="(item, index) in doc.data.statistics" :key="index" class="hidden md:flex items-center gap-[30px]" :class="`arrows-info-${index + 1}`" :style="{ marginTop: index === 1 ? '-100px' : index === 2 ? '-40px' : index === 3 ? '-120px' : '0' }" >
 					<figure class="hidden md:block">
 						<img
 								:src="`./img/stats-arrows-${index + 1}.svg`"

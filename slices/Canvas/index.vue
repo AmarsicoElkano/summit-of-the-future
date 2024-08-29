@@ -102,11 +102,21 @@
 
 </script>
 
+<style scoped>
+	@media screen and (min-width: 1025px) {
+		.circle-gradient {
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) scale(1.2) !important;
+		}
+	}
+</style>
+
 <template>
-	<section :ref="setRef" class="relative bg-primary py-[50px] md:py-[150px] px-[16px] md:px-[60px]">
+	<section :ref="setRef" class="relative bg-primary pt-[180px] md:pt-[150px] pb-[150px] px-[16px] md:px-[60px]">
 		<img
 			src="/img/circle-gradient.svg"
-			class="absolute m-auto animate-rotate w-full max-w-[730px]"
+			class="circle-gradient absolute mx-[-16px] md:m-auto animate-rotate w-full max-w-[730px] !scale-[1.4] md:scale-[inherit]"
 			data-image
 		/>
 		
@@ -114,12 +124,12 @@
 
 			<div class="flex flex-col md:hidden relative mb-[100px]">
 				<PrismicImage
-					class="max-w-[200px] h-[auto] z-10 rounded-xl self-end"
+					class="max-w-[205px] h-[auto] z-10 rounded-[11px] self-end"
 					:field="slice.primary.image_right"
 					data-image
 				/>
 				<PrismicImage
-						class="max-w-[200px] h-[auto] z-10 rounded-xl mt-[-30px]"
+						class="max-w-[205px] h-[auto] z-10 rounded-[11px] mt-[-30px]"
 						:field="slice.primary.image_left"
 						data-image
 					/>
@@ -139,13 +149,13 @@
 
 			<div class="hidden md:block">
 				<PrismicImage
-					class="max-w-260 h-190 z-10 ml-80 absolute rounded-xl top-[50px] right-[100px]"
+					class="max-w-[366px] h-[25rem] z-10 ml-80 absolute rounded-xl top-[-5%] right-0"
 					:field="slice.primary.image_right"
 					data-image
 				/>
 			</div>
 	
-			<div class="text-white flex items-center w-full">
+			<div class="relative px-[30px] md:px-0 text-white flex items-center w-full">
 				<div class="hidden md:block w-1/2">
 					<PrismicImage
 						class="rounded-xl w-full max-w-[366px] h-fit m-auto"

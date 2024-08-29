@@ -143,7 +143,7 @@
 				/>
 				<PrismicImage
 					:field="slice.primary.image"
-					class="absolute bottom-0 left-1/2 transform -translate-x-1/2"
+					class="absolute bottom-0 left-[-3%] sm:left-[25%] smd:left-[25%] mds:left-1/2 transform md:-translate-x-1/2 w-[58%] sm:w-[50%] mds:w-[inherit]"
 					data-image
 				/>
 			</div>
@@ -164,7 +164,7 @@
 				</div>
 			</div>
 
-			<div class="h-[410px] md:h-fit md:absolute bottom-0 right-0 w-full md:w-[50%]">
+			<div class="h-[500px] md:h-fit md:absolute bottom-0 right-0 w-full md:w-[50%]">
 				<img
 					class="absolute bottom-0"
 					:src="bgSymbolDirection.src"

@@ -1,5 +1,5 @@
 import { apiEndpoint, repositoryName } from "./slicemachine.config.json";
-import { createClient } from '@prismicio/client'
+import { createClient } from "@prismicio/client";
 
 export default defineNuxtConfig({
 	ssr: false,
