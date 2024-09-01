@@ -17,6 +17,7 @@ export default {
 		fontFamily: {
 			body: "var(--font-body)",
 			display: "var(--font-display)",
+			light: "var(--font-light)",
 		},
 		fontSize: {
 			base: ["22px"],

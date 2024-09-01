@@ -29,6 +29,38 @@
             }
           }
         }
+      },
+      "action_days_title": {
+        "type": "Text",
+        "config": {
+          "label": "Action Days title",
+          "placeholder": ""
+        }
+      },
+      "action_days_link": {
+        "type": "Link",
+        "config": {
+          "label": "Action Days link",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      },
+      "sof_title": {
+        "type": "Text",
+        "config": {
+          "label": "Sof title",
+          "placeholder": ""
+        }
+      },
+      "sof_link": {
+        "type": "Link",
+        "config": {
+          "label": "Sof link",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
       }
     }
   }

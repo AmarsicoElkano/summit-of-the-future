@@ -33,6 +33,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'robotolight';
+  src: url('/public/font/robotocondensed-light.ttf');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --primary-color: #004987;
   --secondary-color: #ecf5f9;
@@ -44,6 +52,7 @@
   --white: #ffffff;
   --font-body: 'robotoregular';
   --font-display: 'robotobold';
+  --font-light: "robotolight";
   --grid-cols: 12;
   --size-base: 10;
   --size-canvas: 1440;
