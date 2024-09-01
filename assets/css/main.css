@@ -19,7 +19,7 @@
 
 @font-face {
   font-family: 'robotoregular';
-  src: url('/font/robotocondensed-regular.ttf');
+  src: url('/public/font/robotocondensed-regular.ttf');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -27,7 +27,7 @@
 
 @font-face {
   font-family: 'robotobold';
-  src: url('/font/robotocondensed-bold.ttf');
+  src: url('/public/font/robotocondensed-bold.ttf');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
