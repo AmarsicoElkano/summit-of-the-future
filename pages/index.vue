@@ -436,8 +436,6 @@
 								linesClass: "overflow-hidden",
 							});
 
-							console.log(split.char)
-
 							gsap.from(split.chars, duration, {
 								ease: "expo.out",
 								opacity: 0,
