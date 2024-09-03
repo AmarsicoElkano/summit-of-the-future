@@ -98,23 +98,24 @@ export default {
     <nav class="w-full pl-70 pr-40">
       <Logo class="absolute left-[2%] top-[2%] px-[16px] md:px-[60px]" />
 
-      <ul class="flex flex-col items-start absolute top-[20%] sm:top-[20%] md:top-[30%] lg:top-[20%]">
+      <ul class="flex flex-col items-start absolute bottom-[5%] sm:bottom-[5%] md:bottom-[5%] lg:bottom-[5%]">
         <li v-for="(item, index) in navigation.data.links" :key="index"
-          class="text-primary font-display uppercase text-lg md:text-md overflow-hidden relative py-20 md:py-10 last:border-b-[1px] last:border-border-[rgba(224, 224, 225, 0.1)] last:border-opacity-20 last:pb-30"
+          class="text-primary font-display uppercase text-lg md:text-md overflow-hidden relative pt-20 md:pt-10 last:border-b-[1px] last:border-border-[rgba(224, 224, 225, 0.1)] last:border-opacity-20 last:pb-10"
           @click="toggle">
           <div ref="navItems">
             <PrismicLink
               class="flex items-center  border-[rgba(224, 224, 225, 0.1)]  border-t-[1px] cursor-pointer min-w-[360px] sm:w-[450px] md:w-[650px] lg:w-[720px]"
               :field="item.link">
-              <span class="font-light mt-40 ">0{{ index + 1 }}</span> <span
-                class="text-highlight sm:text-canvas_mb md:text-titleSection_mb pl-20 pt-30">{{ slugToString(item.text) }}</span>
+              <span class="font-light mt-40 sm:mt-15 md:mt-20">0{{ index + 1 }}</span> 
+              <span class="text-highlight sm:text-[16px] md:text-[30px] lg:text-[40px] pl-20 sm:pt-15 md:pt-15 pt-30">{{ slugToString(item.text) }}</span>
             </PrismicLink>
+            <!-- sm:text-canvas_mb md:text-titleSection_mb  -->
           </div>
         </li>
       </ul>
     </nav>
     <div
-      class="flex flex-col px-0 md:px-80 sm:px-10 z-20 absolute top-[55%] sm:top-[31%] sm:right-[7%] md:top-[50%] lg:top-[56%] lg:right-[1%] gap-40 md:gap-10 lg:gap-10">
+      class="flex flex-col px-0 lg:px-80 sm:px-10 z-20 absolute top-[55%] sm:top-[31%] sm:right-[7%] md:top-[50%] lg:top-[56%] lg:right-[1%] gap-40 md:gap-10 lg:gap-10">
       <PrismicLink :field="navigation.data.action_days_link" class="max-w-[360px]">
         <div class="w-[360px] h-[140px] py-8 pl-20 pr-6 bg-box-bg flex flex-row cursor-pointer justify-between">
           <p

@@ -25,7 +25,7 @@
 			scroll() {
 				this.sections.forEach((el) => {
 					const titles = gsap.utils.toArray("[data-title]", el);
-					const texts = gsap.utils.toArray("[data-text]", el);
+					const texts = gsap.utils.toArray("[data-text0]", el);
 					if (titles) {
 						titles.forEach((title) => {
 							const duration = parseInt(title.dataset.duration) || 1.25;
