@@ -77,13 +77,13 @@ export default {
 
 <template>
   <section :ref="setRef"
-    class="bg-gradient-to-b from-[var(--secondary-color)] to-[rgba(18, 52, 86, 0.2)] mt-[0px] md:mt-[100px] px-[16px] md:px-[60px] pb-[50px] md:pb-[100px] text-primary">
+    class="bg-gradient-to-b from-[var(--secondary-color)] to-[rgba(18, 52, 86, 0.2)] mt-[0px] px-[16px] md:px-[60px] pb-[50px] md:pb-[100px] text-primary">
     <PrismicImage
-      class="heroGraphic absolute top-[-80px] right-0 w-full h-[auto] sm:max-w-700 md:max-w-950 opacity-30 md:opacity-100"
+      class="heroGraphic absolute top-0 right-0 w-full h-[auto] min-w-[500px] md:max-w-[950px] opacity-30 md:opacity-100"
       :field="slice.primary.image" />
     <div class="mb-[90px] pt-[100px] md:pt-[50px] relative z-10">
       <p>{{ slice.primary.subtitle }}</p>
-      <div class="pt-20">
+      <div class="pt-120">
         <h1 class="uppercase text-hero_mb md:text-hero pl-40" data-title>A MORE</h1>
         <h3 class="uppercase text-hero_mb md:text-hero pl-0" data-title>{{ slice.primary.title }}</h3>
         <h3 class="uppercase text-hero_mb md:text-hero pl-[80px]" data-title>WORLD</h3>
