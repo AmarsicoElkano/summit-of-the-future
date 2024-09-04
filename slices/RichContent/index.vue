@@ -6,6 +6,7 @@ defineProps(getSliceComponentProps(["slice"]));
 <script>
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
+import { components } from "..";
 
 export default {
   data() {
@@ -44,7 +45,8 @@ export default {
       this.sections.forEach((el) => {
         const titles = gsap.utils.toArray("[data-title]", el);
         const images = gsap.utils.toArray("[data-image]", el);
-        const texts = gsap.utils.toArray("[data-text]", el);
+        const texts = document.querySelector('[data-text]');
+
         if (titles) {
           titles.forEach((title) => {
             const duration = parseInt(title.dataset.duration) || 1.25;
@@ -87,19 +89,23 @@ export default {
                   start: "top 80%",
                 },
               }
-            )
-          })
+            );
+          });
         }
 
         if (texts) {
-          texts.forEach((text, index) => {
-            const split = new SplitText(text, {
-              type: "lines, words, chars",
-              linesClass: "overflow-hidden",
+          const paragraphs = el.querySelectorAll('p');
+
+          paragraphs.forEach((p) => {
+            const split = new SplitText(p, {
+              type: 'lines, words, chars',
+              linesClass: 'overflow-hidden',
             });
-            gsap.fromTo(split.chars,
+
+            gsap.fromTo(
+              split.chars,
               {
-                ease: "expo.out",
+                ease: 'expo.out',
                 y: 0,
                 opacity: 0,
               },
@@ -108,14 +114,15 @@ export default {
                 opacity: 1,
                 stagger: 0.0009,
                 scrollTrigger: {
-                  trigger: el,
-                  start: "top 60%",
+                  trigger: p,
+                  start: 'top 60%',
                 }
               }
-            )
-          })
+            );
+          });
         }
-      })
+
+      });
     }
   }
 };
@@ -147,8 +154,7 @@ export default {
           <h2 data-title class="uppercase text-headline_mb md:text-headline mb-[40px] md:mb-[142px]">
             {{ slice.primary.title }}
           </h2>
-
-          <PrismicRichText class="w-full md:w-[60%]" :field="slice.primary.text" data-text />
+          <PrismicRichText data-text class="w-full md:w-[60%]" :field="slice.primary.text" />
         </div>
       </div>
 
@@ -177,35 +183,6 @@ export default {
         </div>
 
       </div>
-      <!-- <div
-				class="flex flex-col justify-center md:gap-[60px] pl-80 pr-80 pt-[100px] pb-40 max-w-[550px] md:max-w-[100%] text-center md:text-left"
-			>
-				<h2 class="uppercase text-lg">
-					{{ slice.primary.title }}
-				</h2>
-				<div class="flex flex-row justify-around">
-					<img
-						class="absolute bottom-[10px] left-0 w-[200px] md:w-[600px]"
-						:class="
-							slice.primary.bg_symbol_position === 'center'
-								? 'left-0'
-								: ' ml-auto mr-auto left-0 right-0 '
-						"
-						:src="bgSymbolDirection.src"
-						data-image
-					/>
-					<PrismicImage
-						:field="slice.primary.image"
-						class="w-[250px] ml-[-80px] md:w-[auto] z-10"
-						data-image
-					/>
-					<PrismicRichText
-						class="md:max-w-[480px] text-left"
-						:field="slice.primary.text"
-						data-text
-					/>
-				</div>
-			</div> -->
     </div>
   </section>
 </template>
