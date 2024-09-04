@@ -581,7 +581,7 @@ export default {
           </div>
         </div>
 
-        <figure ref="heroArrow" class="md:absolute top-1/2 right-0 md:transform md:-translate-y-1/2">
+        <figure ref="heroArrow" class="relative md:absolute top-1/2 right-0 left-[-35vw] md:left-[inherit] w-[105vw] md:w-auto md:transform md:-translate-y-1/2">
           <svg class="w-full h-[auto]" width="1067" height="800" viewBox="0 0 1067 800" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path d="M989.311 500.278H699.485C520.907 500.278 376.098 645.169 376.098 824"
@@ -758,7 +758,7 @@ export default {
               <PrismicImage class="absolute left-0 bottom-0 z-10" :field="doc.data.section_two_image" />
             </figure>
           </div>
-          <div class="w-full md:w-1/2 text-primary pr-[16px] pl-[16px] md:pl-[0px] md:pr-[60px]  pt-[250px]">
+          <div class="w-full md:w-1/2 text-primary pr-[16px] pl-[16px] md:pl-[0px] md:pr-[60px] pt-[50px] md:pt-[250px]">
             <h2 class="text-headline_mb md:text-headline uppercase mb-[36px]" data-title>
               {{ doc.data.section_two_title }}
             </h2>

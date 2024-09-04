@@ -123,13 +123,13 @@ export default {
       </div>
 
       <div class="mb-[40px] md:mb-[140px] relative z-20 max-w-[1000px] lg:max-w-[100%]">
-        <h2 data-title class="text-canvas_mb md:text-canvas uppercase text-white">
+        <h2 data-title class="text-canvas_mb md:text-[8vw] md:max-w-[68vw] uppercase text-white">
           {{ slice.primary.title_one }}
         </h2>
-        <h2 data-title class="text-canvas_mb md:text-canvas pl-[50px] md:pl-[180px] uppercase text-white">
+        <h2 data-title class="text-canvas_mb md:text-[8vw] pl-[50px] md:pl-[180px] md:max-w-[68vw] uppercase text-white">
           {{ slice.primary.title_second }}
         </h2>
-        <h2 data-title class="text-canvas_mb md:text-canvas pl-[30px] md:pl-[100px] uppercase text-white">
+        <h2 data-title class="text-canvas_mb md:text-[8vw] pl-[30px] md:pl-[100px] uppercase text-white">
           {{ slice.primary.title_third }}
         </h2>
       </div>

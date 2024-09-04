@@ -136,14 +136,14 @@ export default {
         <h2 data-title class="w-full md:w-[70%] uppercase text-headline_mb md:text-headline mb-[40px] md:mb-[0px]">
           {{ slice.primary.title }}
         </h2>
-        <PrismicRichText class="w-full md:w-[30%] mb-[40px] md:mb-[0px]" :field="slice.primary.text" data-text />
+        <PrismicRichText class="w-full md:w-[30%] mb-[50px] md:mb-[0px]" :field="slice.primary.text" data-text />
       </div>
 
       <div class="relative">
-        <img class="w-[58%] sm:w-[50%] mds:w-[inherit] ml-auto mr-auto relative" :src="bgSymbolDirection.src"
+        <img class="w-[100%] sm:w-[50%] mds:w-[inherit] ml-auto mr-auto absolute md:relative bottom-0 md:bottom-[inherit] left-1/2 md:left-[inherit] -translate-x-1/2 md:translate-x-0" :src="bgSymbolDirection.src"
           data-image />
         <PrismicImage :field="slice.primary.image"
-          class="absolute bottom-0 left-[-3%] sm:left-[25%] smd:left-[25%] mds:left-1/2 transform md:-translate-x-1/2 max-w-[58%] sm:max-w-[50%] mds:w-[500px] md:max-h-[400px]"
+          class="relative md:absolute bottom-0 left-[-3%] sm:left-[25%] smd:left-[25%] mds:left-[35%] transform md:-translate-x-1/2 max-w-[58%] sm:max-w-[50%] mds:w-[500px] md:max-h-[30vw] object-contain"
           data-image />
       </div>
     </div>
@@ -158,7 +158,7 @@ export default {
         </div>
       </div>
 
-      <div class="h-[500px] md:h-fit md:absolute bottom-0 right-0 w-full md:w-[50%]">
+      <div class="h-[400px] md:h-fit md:absolute bottom-0 right-0 w-full md:w-[50%]">
         <img class="absolute bottom-0" :src="bgSymbolDirection.src" data-image />
         <PrismicImage :field="slice.primary.image" data-image class="absolute bottom-0" />
       </div>
