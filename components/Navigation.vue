@@ -93,53 +93,61 @@ export default {
 </script>
 <template>
   <div ref="nav"
-    class="bg-white max-h-[100vh] w-screen h-screen overflow-y-hidden fixed top-0 inset-0 bg-primary bg-radial-gradient flex items-center justify-center nav z-20 ">
-    <img class="absolute top-0  z-0" width="100%" height="auto" src="/public/img/symbol.svg" />
-    <nav class="w-full pl-70 pr-40">
-      <Logo class="absolute left-[2%] top-[2%] px-[16px] md:px-[60px]" />
+    class="max-h-[100vh] w-screen max-h-screen !overflow-y-hidden fixed top-0 inset-0 bg-primary bg-radial-gradient flex flex-col justify-between nav z-20">
 
-      <ul class="flex flex-col items-start absolute bottom-[5%] sm:bottom-[5%] md:bottom-[5%] lg:bottom-[5%]">
-        <li v-for="(item, index) in navigation.data.links" :key="index"
-          class="text-primary font-display uppercase text-lg md:text-md overflow-hidden relative pt-20 md:pt-10 last:border-b-[1px] last:border-border-[rgba(224, 224, 225, 0.1)] last:border-opacity-20 last:pb-10"
+    <Logo class="absolute left-0 top-[10px] px-[16px] md:px-[60px]" />
+
+    <div class="max-w-[900px]">
+      <img class="absolute   top-0 max-w-full w-full h-auto" src="/public/img/symbol.svg" />
+    </div>
+
+    <div
+      class="flex flex-col py-80 md:flex-row justify-center gap-80  md:justify-between items-center md:items-end lg:items-end h-full flex-end w-full px-10 md:px-60 h-full">
+      <!-- Navigation Links Section -->
+      <div class="flex flex-col md:flex-col items-start w-full sm:max-w-[720px]">
+        <div v-for="(item, index) in navigation.data.links" :key="index"
+          class="text-primary font-display w-[720px] uppercase text-lg md:text-md overflow-hidden relative py-20 md:py-10 last:border-b-[1px] last:border-border-custom-blue last:border-opacity-20 last:pb-30"
           @click="toggle">
           <div ref="navItems">
             <PrismicLink
-              class="flex items-center  border-[rgba(224, 224, 225, 0.1)]  border-t-[1px] cursor-pointer min-w-[360px] sm:w-[450px] md:w-[650px] lg:w-[720px]"
+              class="flex items-center border-t-[1px] border-border-custom-blue border-opacity-20 cursor-pointer w-full"
               :field="item.link">
-              <span class="font-light mt-40 sm:mt-15 md:mt-20">0{{ index + 1 }}</span> 
-              <span class="text-highlight sm:text-[16px] md:text-[30px] lg:text-[40px] pl-20 sm:pt-15 md:pt-15 pt-30">{{ slugToString(item.text) }}</span>
+              <span class="font-light mt-40">0{{ index + 1 }}</span>
+              <span class="text-highlight sm:text-titleSection_mb md:text-titleSection_mb pl-20 pt-30">
+                {{ slugToString(item.text) }}
+              </span>
             </PrismicLink>
-            <!-- sm:text-canvas_mb md:text-titleSection_mb  -->
           </div>
-        </li>
-      </ul>
-    </nav>
-    <div
-      class="flex flex-col px-0 lg:px-80 sm:px-10 z-20 absolute top-[55%] sm:top-[31%] sm:right-[7%] md:top-[50%] lg:top-[56%] lg:right-[1%] gap-40 md:gap-10 lg:gap-10">
-      <PrismicLink :field="navigation.data.action_days_link" class="max-w-[360px]">
-        <div class="w-[360px] h-[140px] py-8 pl-20 pr-6 bg-box-bg flex flex-row cursor-pointer justify-between">
-          <p
-            class="text-primary uppercase w-[150px] pt-40 pl-40 md:pt-20 md:pl-10 font-bold sm:w-[110px] md:w-[140px] sm:leading-20 md:leading-10 z-30 ">
-            {{ navigation.data.action_days_title }}
-          </p>
-          <img class="w-[53px] h-[53px] self-end mr-10 mb-5" src="/public/img/arrow-right-menu.svg">
         </div>
-      </PrismicLink>
-      <PrismicLink :field="navigation.data.sof_link">
-        <div class="w-[360px] h-[140px] py-8 pl-20 pr-6 bg-box-bg flex flex-row cursor-pointer justify-between">
-          <p
-            class="text-primary uppercase w-[150px] pt-40 pl-40 md:pt-20 md:pl-10 font-bold sm:w-[110px] md:w-[140px] sm:leading-20 md:leading-10 z-30 ">
+      </div>
 
-            {{ navigation.data.sof_title }}
-          </p>
-          <img class="w-[53px] h-[53px] self-end mr-10 mb-5" src="/public/img/arrow-right-menu.svg">
-        </div>
-      </PrismicLink>
+      <!-- Prismic Links Section -->
+      <div class="flex flex-col md:flex-col space-y-20 z-20 w-full flex-end max-w-[360px]">
+        <PrismicLink :field="navigation.data.action_days_link" class=" ">
+          <div
+            class="w-full md:w-[360px] h-[140px] py-20 md:py-8 pl-20 xs:pr-20 xs:py-20 sm:py-20 sm:pr-10 md:pr-10 bg-box-bg flex flex-row cursor-pointer justify-between">
+            <p
+              class="text-primary uppercase w-[150px] pt-40 pl-40 md:pt-20 md:pl-10 font-bold sm:w-[110px] md:w-[140px] sm:leading-20 md:leading-10 z-30">
+              {{ navigation.data.action_days_title }}
+            </p>
+            <img class="w-[53px] h-[53px] self-end mb-5" src="/public/img/arrow-right-menu.svg">
+          </div>
+        </PrismicLink>
+        <PrismicLink :field="navigation.data.sof_link">
+          <div
+            class="w-full md:w-[360px] h-[140px] py-20 md:py-8 pl-20 xs:pr-20 xs:py-20 sm:py-20 sm:pr-10 md:pr-10 bg-box-bg flex flex-row cursor-pointer justify-between">
+            <p
+              class="text-primary uppercase w-[150px] pt-40 pl-40 md:pt-20 md:pl-10 font-bold sm:w-[110px] md:w-[140px] sm:leading-20 md:leading-10 z-30">
+              {{ navigation.data.sof_title }}
+            </p>
+            <img class="w-[53px] h-[53px] self-end mb-5" src="/public/img/arrow-right-menu.svg">
+          </div>
+        </PrismicLink>
+      </div>
     </div>
-
   </div>
-  <div class="flex flex-row gap-20">
 
+  <div class="flex flex-row gap-20">
     <button ref="toggleNav"
       class="w-[50px] h-[50px] flex flex-col border border-[var(--primary-color)] rounded-full items-center justify-center z-20 toggle-nav"
       :class="{ active: isActive }" @click="toggle">
@@ -154,6 +162,10 @@ export default {
 </template>
 
 <style scoped>
+.border-custom-blue {
+  color: rgba(1, 70, 128, 0.1);
+}
+
 .nav {
   clip-path: inset(0% 0% 100% 0%);
 }
