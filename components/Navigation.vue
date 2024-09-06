@@ -93,9 +93,9 @@ export default {
 </script>
 <template>
   <div ref="nav"
-    class="max-h-[100vh] w-screen max-h-screen !overflow-y-hidden fixed top-0 inset-0 bg-primary bg-radial-gradient flex flex-col justify-between nav z-20">
+    class="max-h-[100vh] w-full max-h-screen !overflow-y-hidden fixed top-0 inset-0 bg-primary bg-radial-gradient flex flex-col justify-between nav z-20">
 
-    <Logo class="absolute left-0 top-[10px] px-[16px] md:px-[60px]" />
+    <Logo class="relative md:absolute left-0 top-[10px] px-[16px] md:px-[60px]" />
 
     <div class="max-w-[900px]">
       <img class="absolute   top-0 max-w-full w-full h-auto" src="/public/img/symbol.svg" />
@@ -104,7 +104,7 @@ export default {
     <div
       class="flex flex-col py-80 md:flex-row justify-center gap-80  md:justify-between items-center md:items-end lg:items-end h-full flex-end w-full px-10 md:px-60 h-full">
       <!-- Navigation Links Section -->
-      <div class="flex flex-col md:flex-col items-start w-full sm:max-w-[720px]">
+      <div class="flex flex-col md:flex-col items-start w-full sm:max-w-[720px] pt-[15px] md:pt-0">
         <div v-for="(item, index) in navigation.data.links" :key="index"
           class="text-primary font-display w-[720px] uppercase text-lg md:text-md overflow-hidden relative py-20 md:py-10 last:border-b-[1px] last:border-border-custom-blue last:border-opacity-20 last:pb-30"
           @click="toggle">
