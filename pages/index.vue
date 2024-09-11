@@ -174,20 +174,17 @@ export default {
       return s
     },
     gallery() {
-      window.innerWidth > 1024 && (
-        gsap.to(this.$refs.circleGradient, 20, {
-          rotation: "360",
-          ease: "none",
-          repeat: -1,
-        }),
+      gsap.to(this.$refs.circleGradient, 20, {
+        rotation: "360",
+        ease: "none",
+        repeat: -1,
+      });
 
-        gsap.to(this.$refs.circleDashed, 80, {
-          rotation: "-360",
-          ease: "none",
-          repeat: -1,
-        })
-      )
-
+      gsap.to(this.$refs.circleDashed, 80, {
+        rotation: "-360",
+        ease: "none",
+        repeat: -1,
+      })
 
       const images = this.$refs.images;
       const duration = 0.5;
@@ -471,7 +468,7 @@ export default {
   },
 };
 </script>
-
+<!-- 
 <style scoped>
 .set-image:last-child {
   display: none;
@@ -539,7 +536,7 @@ export default {
     margin-top: -6vw !important;
   }
 }
-</style>
+</style> -->
 
 <template>
   <div>
@@ -581,7 +578,8 @@ export default {
           </div>
         </div>
 
-        <figure ref="heroArrow" class="relative md:absolute top-1/2 right-0 left-[-35vw] md:left-[inherit] w-[105vw] md:w-auto md:transform md:-translate-y-1/2">
+        <figure ref="heroArrow"
+          class="relative md:absolute top-1/2 right-0 left-[-35vw] md:left-[inherit] w-[105vw] md:w-auto md:transform md:-translate-y-1/2">
           <svg class="w-full h-[auto]" width="1067" height="800" viewBox="0 0 1067 800" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path d="M989.311 500.278H699.485C520.907 500.278 376.098 645.169 376.098 824"
@@ -670,25 +668,22 @@ export default {
       </section>
 
       <!-- gallery -->
-      <section :ref="setRef" class="bg-primary min-h-[80dvh] sm:min-h-screen relative">
+      <section :ref="setRef" class="bg-primary min-h-screen relative">
         <div ref="nextSection" lass="animate-[noise_.2s_infinite] noise z-0 opacity-50"></div>
 
-        <figure class="absolute top-0 right-0 w-screen h-[75dvh] sm:h-screen scale-[1.4] sm:scale-100">
+        <figure class="absolute top-0 right-0 w-screen h-screen">
           <img src="/img/circle-gradient.svg"
             class="w-[80vw] h-[80vh] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             ref="circleGradient" />
         </figure>
-        <figure
-          class="absolute inset-0 flex items-center justify-center w-full h-[75dvh] sm:h-full opacity-30 z-0 scale-[1.4] sm:scale-100"
+        <figure class="absolute inset-0 flex items-center justify-center w-full h-full opacity-30 z-0"
           ref="circleDashed">
           <img src="/img/circle-dashed.svg" class="w-[90vw] h-[90vh]" />
         </figure>
 
-        <div class="absolute w-screen h-[75dvh] sm:h-[80%]">
-          <div
-            class="w-[76px] md:w-[200px] h-[54px] md:h-[143px] rounded-[11px] md:rounded-lg absolute bg-center bg-cover bg-no-repeat"
-            :class="`set-image set-image-${index + 1}`" v-for="(item, index) in doc.data.gallery" :key="index"
-            ref="images" :style="{
+        <div class="absolute w-screen h-screen md:h-[80%]">
+          <div class="w-[76px] h-[54px] sm:w-[200px] sm:h-[143px] rounded-lg absolute bg-center bg-cover bg-no-repeat"
+            v-for="(item, index) in doc.data.gallery" :key="index" ref="images" :style="{
               backgroundImage: `url(${item.image.url})`,
               top: galleryTopItemPosition(index),
               left: galleryLeftItemPosition(index),
@@ -705,8 +700,7 @@ export default {
           </h2>
         </div>
       </section>
-      <section :ref="setRef"
-        class="relative bg-primary pt-[54px] md:pt-[70px] pb-[100px] md:pb-[70px] px-[16px] md:px-[60px]">
+      <section :ref="setRef" class="relative bg-primary py-[54px] md:py-[70px] px-[16px] md:px-[60px]">
         <p class="text-white md:w-[56%] text-medium_mb md:text-medium" data-reveal>
           {{ doc.data.gallery_paragraph }}
         </p>
@@ -758,7 +752,8 @@ export default {
               <PrismicImage class="absolute left-0 bottom-0 z-10" :field="doc.data.section_two_image" />
             </figure>
           </div>
-          <div class="w-full md:w-1/2 text-primary pr-[16px] pl-[16px] md:pl-[0px] md:pr-[60px] pt-[50px] md:pt-[250px]">
+          <div
+            class="w-full md:w-1/2 text-primary pr-[16px] pl-[16px] md:pl-[0px] md:pr-[60px] pt-[50px] md:pt-[250px]">
             <h2 class="text-headline_mb md:text-headline uppercase mb-[36px]" data-title>
               {{ doc.data.section_two_title }}
             </h2>
