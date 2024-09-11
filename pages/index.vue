@@ -780,7 +780,7 @@ export default {
                     <h2 class="text-[28px] leading-none mb-[8px] md:text-md uppercase">
                       {{ item.title }}
                     </h2>
-                    <p class="text-[16px] leading-none mb-[40px] md:mb-[0px] md:text-base mt-20 mb-40">
+                    <p class="text-[16px] leading-none md:mb-[0px] md:text-base mt-20 mb-40">
                       {{ item.paragraph }}
                     </p>
                     <NuxtLink :to="'/chapter/' + item.link.uid" class="flex items-center" ref="navItems">
@@ -818,7 +818,7 @@ export default {
             <ul class="flex flex-row justify-between h-full overflow-hidden">
               <li class="w-full h-full text-xsm flex items-center" v-for="(item, index) in doc.data.chapters"
                 :key="index" data-chapter>
-                <button class="w-full h-full text-primary hover:bg-primary hover:text-white p-20"
+                <button class="w-full h-full text-primary hover:bg-primary hover:text-white p-20 leading-[1.1]"
                   :class="{ 'pointer-events-none': index == 0 }" ref="chaptersnavitems">
                   {{ item.button_text }}
                 </button>
@@ -829,11 +829,11 @@ export default {
             ref="chaptersitems" :class="{ 'opacity-0': index != 0 }">
             <div class="w-full h-full flex justify-between text-primary items-center px-[60px]">
               <div class="w-1/2 z-10">
-                <p v-if="item.subtitle" class="mb-[40px]">{{ item.paragraph }}</p>
-                <h3 v-if="item.subtitle" class="text-readmore uppercase">
+                <p v-if="item.subtitle" class="mb-[40px] min-w-[100%] md:min-w-[70vw] lg:min-w-[100%]">{{ item.paragraph }}</p>
+                <h3 v-if="item.subtitle" class="text-readmore uppercase min-w-[100%] md:min-w-[70vw] lg:min-w-[100%]">
                   {{ item.subtitle }}
                 </h3>
-                <h2 class="text-subheadline uppercase">
+                <h2 class="text-subheadline uppercase " :class="{'min-w-[100%] md:min-w-[70vw] lg:min-w-[100%]': index != 0}">
                   {{ item.title }}
                 </h2>
                 <p v-if="!item.subtitle">{{ item.paragraph }}</p>
