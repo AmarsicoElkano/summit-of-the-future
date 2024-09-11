@@ -692,10 +692,10 @@ export default {
 
         <div
           class="absolute max-w-[1500px] w-full left-1/2 transform -translate-x-1/2 bottom-0 flex flex-col px-[16px] md:px-[60px]">
-          <h2 class="text-xl_mb md:text-xl uppercase text-white" data-title>
+          <h2 class="text-xl_mb sm:text-headline md:text-xl uppercase text-white" data-title>
             {{ doc.data.gallery_title_one }}
           </h2>
-          <h2 class="text-xl_mb md:text-xl uppercase text-white self-end" data-title>
+          <h2 class="text-xl_mb sm:text-headline md:text-xl uppercase text-white self-end" data-title>
             {{ doc.data.gallery_title_two }}
           </h2>
         </div>
@@ -824,11 +824,14 @@ export default {
             ref="chaptersitems" :class="{ 'opacity-0': index != 0 }">
             <div class="w-full h-full flex justify-between text-primary items-center px-[60px]">
               <div class="w-1/2 z-10">
-                <p v-if="item.subtitle" class="mb-[40px] min-w-[100%] md:min-w-[70vw] lg:min-w-[100%]">{{ item.paragraph }}</p>
+                <p v-if="item.subtitle" class="mb-[40px] min-w-[100%] md:min-w-[70vw] lg:min-w-[100%]">
+                  {{ item.paragraph }}
+                </p>
                 <h3 v-if="item.subtitle" class="text-readmore uppercase min-w-[100%] md:min-w-[70vw] lg:min-w-[100%]">
                   {{ item.subtitle }}
                 </h3>
-                <h2 class="text-subheadline uppercase " :class="{'min-w-[100%] md:min-w-[70vw] lg:min-w-[100%]': index != 0}">
+                <h2 class="text-subheadline uppercase "
+                  :class="{ 'min-w-[100%] md:min-w-[70vw] lg:min-w-[100%]': index != 0 }">
                   {{ item.title }}
                 </h2>
                 <p v-if="!item.subtitle">{{ item.paragraph }}</p>
